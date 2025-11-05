@@ -1,7 +1,7 @@
 # main.py
 from fastapi import FastAPI, HTTPException
 from typing import List
-from src.database import users
+from database import users
 
 app = FastAPI(
     title="Control de Acceso - REST",
