@@ -1,8 +1,10 @@
 package graphql;
 
+import com.cipriano.demo.domain.Autor;
 import com.cipriano.demo.domain.Libro;
 import com.cipriano.demo.domain.Prestamo;
 import com.cipriano.demo.repo.*;
+import lombok.var;
 import org.springframework.graphql.data.method.annotation.*;
 import org.springframework.stereotype.Controller;
 
@@ -35,10 +37,10 @@ public class BibliotecaGraphql {
     }
 
     @QueryMapping
-    public com.example.demo.domain.Libro libro(@Argument Long id){ return libroRepo.findById(id).orElse(null); }
+    public Libro libro(@Argument Long id){ return libroRepo.findById(id).orElse(null); }
 
     @QueryMapping
-    public List<com.example.demo.domain.Autor> autores(){ return autorRepo.findAll(); }
+    public List<Autor> autores(){ return autorRepo.findAll(); }
 
     @QueryMapping
     public List<Prestamo> prestamos(@Argument Long usuarioId){
