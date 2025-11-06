@@ -1,5 +1,6 @@
 package com.cipriano.demo.repo;
 
-public class AutorRepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AutorRepository extends JpaRepository<Autor, Long> {
 }
